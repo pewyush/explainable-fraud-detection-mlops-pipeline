@@ -1,7 +1,7 @@
 # Problem Statement
 Financial institutions lose significant revenue to fraudulent transactions, but naive fraud classifiers create their own cost: false positives block legitimate customers and erode trust, while false negatives let fraud through.
 
-This project builds a fraud detection model whose predictions are explainable and auditable enough for a model-risk review, and demonstrates how a bank would safely roll out a model update in production — via shadow deployment — without risking customer-facing decisions on an unvalidated model. 
+This project builds a fraud detection model whose predictions are explainable and auditable enough for a model-risk review, and demonstrates how a bank would safely roll out a model update in production — via shadow deployment — without risking customer-facing decisions on an unvalidated model.
 
 ### Final Deliverables
 - Model: precision/recall/F1 and precision@k reported, cost-sensitive threshold chosen and justified (not default 0.5) — since false positives ≠ false negatives cost-wise
@@ -10,14 +10,13 @@ This project builds a fraud detection model whose predictions are explainable an
 - Deployed: a FastAPI scoring endpoint + a small dashboard showing flagged transactions with their reason codes and champion/challenger comparison
 
 ### Data Source
-IEEE-CIS Fraud Detection
+IEEE-CIS Fraud Detection - https://www.kaggle.com/competitions/ieee-fraud-detection/data
 
 ### Tentative tech stack
 - Language & environment
 
-        Python 3.11
-        venv + requirements.txt (not Poetry/Conda — simplest, zero surprises, universally understood by reviewers)
-
+        Python 3.12.10
+        
 - Data & modeling (Phases 3-5)
 
         pandas, numpy — data handling
@@ -56,4 +55,4 @@ IEEE-CIS Fraud Detection
         Prometheus/Grafana for live API monitoring
         Swap Streamlit for a proper React frontend
 
-This stack touches every phase of your blueprint without introducing anything exotic or hard to justify in an interview — every tool here is something an actual bank's ML platform team would recognize immediately.
+This stack touches every phase of the pipeline without introducing anything exotic or hard to justify in an interview — every tool here is something an actual bank's ML platform team would recognize immediately.
